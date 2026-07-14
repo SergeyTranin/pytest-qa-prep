@@ -1,5 +1,5 @@
 import pytest
-from calculator import subtract
+from legacy.calculator import subtract
 
 # Subtraction tests
 @pytest.mark.parametrize("number1, number2, expected_result", [
