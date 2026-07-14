@@ -1,5 +1,5 @@
 import pytest
-from calculator import add, subtract, multiply, divide
+from calculator import add
 
 # Addition tests
 @pytest.mark.parametrize("number1, number2, expected_result", [
