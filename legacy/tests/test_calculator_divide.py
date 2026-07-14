@@ -1,5 +1,5 @@
 import pytest
-from calculator import divide
+from legacy.calculator import divide
 
 # Division tests
 @pytest.mark.parametrize("number1, number2, expected_result", [

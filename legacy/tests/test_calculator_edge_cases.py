@@ -1,5 +1,5 @@
 import pytest
-from calculator import add, subtract, multiply, divide
+from legacy.calculator import add, subtract, multiply, divide
 
 # Division by zero tests
 @pytest.mark.parametrize(
