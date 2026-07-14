@@ -1,68 +1,84 @@
-Python Calculator Project
+# pytest-qa-prep
 
-A simple calculator project written in Python. This project provides basic arithmetic operations and includes automated tests to verify that the calculator works correctly in different scenarios.
+![CI](https://github.com/SergeyTranin/pytest-qa-prep/actions/workflows/ci.yml/badge.svg)
 
-Installation
-1. Clone the repository
-git clone <repository-url>
-cd <project-directory>
-2. Create and activate a virtual environment (recommended)
+A QA automation portfolio project built with **Python**, **pytest**, and **Playwright**.
+It combines API test automation, UI test automation, and CI/CD to demonstrate
+real-world test framework design rather than isolated exercises.
 
-On macOS/Linux:
+## Project structure
 
-python3 -m venv venv
-source venv/bin/activate
+pytest-qa-prep/
+├── .github/workflows/ci.yml # CI pipeline (lint + tests)
+├── api/
+│   ├── clients/            # HTTP client wrappers
+│   ├── models/             # response schema models
+│   └── tests/              # API test suite
+├── ui/
+│   ├── pages/              # Page Object Model classes
+│   └── tests/              # UI test suite (Playwright)
+├── config/
+│   ├── settings.py         # environment-driven settings
+│   └── .env.example
+├── utils/
+│   ├── data_factories.py   # test data factories, helpers
+│   └── logger.py
+├── docs/
+│   ├── test_strategy.md
+│   └── bugs_found.md       # test strategy, bug reports
+├── legacy/
+│   ├── test/
+│   └── calculator.py       # original calculator exercise (kept for history)
+├── conftest.py
+├── pytest.ini / pyproject.toml
+├── requirements.txt
+├── Dockerfile
+└── README.md
 
-On Windows:
+## Status
+This project is actively being built out. Current focus: pytest fundamentals
+(fixtures, parametrization, markers) on top of the legacy calculator suite,
+before layering in API and UI automation.
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone [github.com](https://github.com/SergeyTranin/pytest-qa-prep.git)
+   cd pytest-qa-prep
 
-python -m venv venv
-venv\Scripts\activate
-3. Install dependencies
+2. Create and activate a virtual environment:
+   ```bash
+    python3 -m venv venv
+    source venv/bin/activate   # Windows: venv\Scripts\activate
 
-Install the required Python packages using:
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
 
-pip install -r requirements.txt
+4. Copy .env.example to .env and adjust values if needed.
 
-If the project does not have external dependencies, no additional installation is required.
 
-Running the Tests
+## Running the tests
+1. Run the full suite:
+    ```bash
+    pytest
 
-The project uses Python's testing framework to run automated tests.
+2. Run a specific layer:
+   ```bash
+    pytest api/tests      # API tests
+    pytest ui/tests       # UI tests (Playwright)
+    pytest legacy         # original calculator tests
 
-Run all tests with:
+3. Filter by marker:
+   ```bash
+    pytest -m smoke        # fast critical-path checks
+    pytest -m regression   # full regression suite
 
-pytest
+## Legacy: calculator project
+The project started as a simple calculator exercise (basic arithmetic operations with unit tests). That code and its tests now live under legacy/ and are still part of the CI run — kept as a record of the project's starting point rather than deleted.
 
-or, if using Python's built-in test runner:
-
-python -m unittest
-
-A successful test run confirms that the calculator functions behave as expected.
-
-Test Coverage
-
-The tests cover the main calculator functionality, including:
-
-Addition
-Testing positive numbers
-Testing negative numbers
-Testing combinations of positive and negative values
-Testing addition with zero
-Subtraction
-Testing subtraction of positive numbers
-Testing negative number calculations
-Testing subtraction resulting in zero
-Multiplication
-Testing multiplication of positive and negative values
-Testing multiplication by zero
-Testing multiplication by one
-Division
-Testing division with valid inputs
-Testing decimal results
-Testing division by zero handling
-Edge Cases
-Large number calculations
-Zero as an input value
-Invalid operations and error handling (where applicable)
-
-The goal of the test suite is to ensure that the calculator produces correct results and handles unexpected inputs safely.
+## Roadmap
+ Repo structure + CI bootstrap
+ API test suite (client layer, schema validation, negative cases)
+ UI test suite (Page Object Model, Playwright)
+ Hybrid API-seeds / UI-verifies tests
+ Allure reporting + Dockerized CI pipeline

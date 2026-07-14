@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+# Environment variables
+.env
+.env.*
+!.env.example
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+# Playwright
+test-results/
+playwright-report/
+# Allure
+allure-results/
+allure-report/
+# IDE
+.vscode/
+.idea/
+.DS_Store
