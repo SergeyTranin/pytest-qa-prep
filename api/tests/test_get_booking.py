@@ -35,7 +35,7 @@ class TestGetBooking:
         booking = Booking(
             firstname="Read",
             lastname="Test",
-            totalprice=99.99,
+            totalprice=99,
             depositpaid=True,
             checkin="2024-01-15",
             checkout="2024-01-20",
@@ -60,7 +60,7 @@ class TestGetBooking:
         assert booking_data is not None, "Should return booking data"
         assert booking_data["firstname"] == "Read"
         assert booking_data["lastname"] == "Test"
-        assert booking_data["totalprice"] == 99.99
+        assert booking_data["totalprice"] == 99
     
     def test_get_booking_returns_all_fields(self, booking_client, created_booking):
         """

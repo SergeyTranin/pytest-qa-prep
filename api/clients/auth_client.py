@@ -6,8 +6,6 @@ It inherits from BaseClient to reuse HTTP methods.
 """
 from api.clients.base_client import BaseClient
 from api.models.auth import AuthCredentials, AuthResponse
-from typing import Optional
-import requests
 
 
 class AuthClient(BaseClient):

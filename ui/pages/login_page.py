@@ -116,7 +116,7 @@ class LoginPage(BasePage):
         """
         try:
             return self.is_visible(self.USER_PROFILE_BUTTON)
-        except:
+        except Exception:
             return False
     
     def logout(self):
