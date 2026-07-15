@@ -12,7 +12,6 @@ import pytest
 from api.clients.booking_client import BookingClient
 from api.clients.auth_client import AuthClient
 from api.models.booking import Booking
-from api.models.auth import AuthCredentials
 
 
 class TestUpdateBooking:

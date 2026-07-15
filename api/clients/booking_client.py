@@ -7,7 +7,6 @@ It's the main interface for interacting with booking resources.
 from api.clients.base_client import BaseClient
 from api.models.booking import Booking, BookingResponse
 from typing import Optional, Dict, Any
-import requests
 
 
 class BookingClient(BaseClient):

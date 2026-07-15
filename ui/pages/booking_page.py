@@ -10,7 +10,7 @@ This page tests:
 """
 
 from ui.pages.base_page import BasePage
-from typing import List, Dict
+from typing import List
 
 
 class BookingPage(BasePage):

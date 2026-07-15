@@ -22,12 +22,11 @@ Usage:
 import random
 import string
 from datetime import datetime, timedelta
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 
 from utils.constants import (
     VALID_BOOKING_DATA,
-    INVALID_BOOKING_DATA,
-    BOOKING_CONSTRAINTS,
+    INVALID_BOOKING_DATA
 )
 
 

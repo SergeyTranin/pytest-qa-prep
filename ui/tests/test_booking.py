@@ -52,7 +52,7 @@ def authenticated_page(page):
     # Cleanup: Logout
     try:
         login_page.logout()
-    except:
+    except Exception:
         pass
 
 
@@ -211,8 +211,6 @@ class TestCreateBooking:
         Parametrized: Tests multiple scenarios
         """
         booking_page.goto_bookings()
-        
-        initial_count = booking_page.get_booking_count()
         
         booking_page.click_create_booking()
         
