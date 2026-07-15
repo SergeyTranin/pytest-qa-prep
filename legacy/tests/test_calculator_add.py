@@ -15,3 +15,6 @@ from legacy.calculator import add
 ])
 def test_add(number1, number2, expected_result):
     assert add(number1, number2) == pytest.approx(expected_result)
+#
+# def test_add_uses_fixture(calculator):
+#     assert calculator.add(2, 3) == 5
