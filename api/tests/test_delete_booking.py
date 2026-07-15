@@ -8,7 +8,6 @@ These tests verify that:
 4. Deleting non-existent bookings returns 404
 5. Deletion doesn't affect other bookings
 """
-import time
 
 import pytest
 from api.clients.booking_client import BookingClient
